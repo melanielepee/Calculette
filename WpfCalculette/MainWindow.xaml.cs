@@ -31,6 +31,23 @@ namespace WpfCalculette
             double dblNb2;
             double dblNbResponse;
 
+            if (double.TryParse(tbxNumber1.Text, out dblNb1))
+            {
+                if (double.TryParse(tbxNumber2.Text, out dblNb2)) 
+                {
+                    dblNbResponse = dblNb1 + dblNb2;
+                    lblResponse.Content = dblNbResponse.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please control input..");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please control input..");
+                }
+
             dblNb1 = Convert.ToInt32(tbxNumber1.Text);
             dblNb2 = Convert.ToInt32(tbxNumber2.Text);
 
